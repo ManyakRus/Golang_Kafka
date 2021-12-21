@@ -16,7 +16,7 @@ var Address = []string{"localhost:9092"}
 //var Address = []string{"localhost:9092"}
 
 func main() {
-	syncProducer(Address)
+	//syncProducer(Address)
 
 	topic := "test"
 	worker, err := connectConsumer(Address)
@@ -30,6 +30,8 @@ func main() {
 
 	m := <-consumer.Messages()
 	println(m)
+	//m = <-consumer.Messages()
+	//println(m)
 }
 
 func connectConsumer(brokersUrl []string) (sarama.Consumer, error) {
